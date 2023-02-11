@@ -5,9 +5,7 @@ import profilephoto from './images/profilephoto.png'
 export default function NavBar({setOnPage}) {
   
 function handleClick(e) {
-  console.log("Before Handle Click Page Name: ")
   setOnPage(e.target.name)
-  console.log("After Handle Click Page Name: ")
 }
 
   return (
