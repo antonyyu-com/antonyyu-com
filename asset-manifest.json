@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.91d7ffc6.css",
+    "main.js": "/static/js/main.614b4ad0.js",
+    "static/media/profilephoto.png": "/static/media/profilephoto.4ce9d6f1059f6b8c744e.png",
+    "static/media/github-logo.svg": "/static/media/github-logo.3b21c250a99986431958daaa9246a45a.svg",
+    "static/media/email-icon.svg": "/static/media/email-icon.71726be8f91fcbd7fb10b7c1c535929a.svg",
+    "index.html": "/index.html",
+    "static/media/linkedin-logo.svg": "/static/media/linkedin-logo.98956d298e14a6384fdb39c42269f2f2.svg",
+    "main.91d7ffc6.css.map": "/static/css/main.91d7ffc6.css.map",
+    "main.614b4ad0.js.map": "/static/js/main.614b4ad0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.91d7ffc6.css",
+    "static/js/main.614b4ad0.js"
+  ]
+}
