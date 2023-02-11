@@ -17,11 +17,11 @@ function App() {
       <Routes>
         {/* client-side route that renders the component instance if the path matches the url in the address bar */}
         {/* <Route path="/" element={<App />} /> */}
-        <Route path="/home" element={<HomePage />} />
+        <Route path="/home" element={<AboutPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
         {/* redirect to /orders/new if path in address bar hasn't matched a <Route> above */}
-        <Route path="/*" element={<Navigate to="/home" />} />
+        <Route path="/*" element={<Navigate to="/about" />} />
       </Routes>
       <div className="footer-container">
       <SocialsBar />
