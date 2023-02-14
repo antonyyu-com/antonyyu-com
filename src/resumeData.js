@@ -1,5 +1,5 @@
 let resumeData = {
-    "name": "Antony Yu",
+    "name": "Antony",
     "linkedinLink":"https://www.linkedin.com/in/antonyyu/",
     "landingIntro": "I'm a Full Stack Software Engineer & Program Operations Leader. I'm always looking for opportunities to collaborate on new projects- so feel free to reach out!",
     "socialLinks":[
