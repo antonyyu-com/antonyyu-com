@@ -1,43 +1,43 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 export default class About extends Component {
-  render() {
-    let resumeData = this.props.resumeData;
+  render () {
+    const resumeData = this.props.resumeData
     return (
-      <section id="about">
-         <div className="row">
+      <section id='about'>
+        <div className='row'>
 
-            <div className="three columns">
+          <div className='three columns'>
 
-               <img className="profile-pic"  src="images/profilepic.png" alt="Antony Yu" />
+            <img className='profile-pic' src='images/profilepic.png' alt='Antony Yu' />
 
-            </div>
+          </div>
 
-            <div className="nine columns main-col">
+          <div className='nine columns main-col'>
 
-               <h2>Me</h2>
-               <p>
-               {
+            <h2>Me</h2>
+            <p>
+              {
                  resumeData.aboutme
                }
-               </p>
+            </p>
 
-               <div className="row">
+            <div className='row'>
 
-                  <div className="columns contact-details">
+              <div className='columns contact-details'>
 
-                  <h2>Contact</h2>
-                  <p className="address">
-       						<span>{resumeData.name}</span>
-                     <br></br>
-       						   <span>
-                     {resumeData.email}
-                    </span>
-       					   </p>
-                  </div>
-               </div>
+                <h2>Contact</h2>
+                <p className='address'>
+                  <span>{resumeData.name}</span>
+                  <br />
+                  <span>
+                    {resumeData.email}
+                  </span>
+                </p>
+              </div>
             </div>
-         </div>
+          </div>
+        </div>
       </section>
-    );
+    )
   }
 }
