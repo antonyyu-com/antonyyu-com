@@ -12,9 +12,9 @@ export default class Contact extends Component {
           </div>
         </div>
         <div className="row">
-          <aside className="eigth columns footer-widgets">
+          <aside className="eight columns footer-widgets">
             <div className="widget">
-              <p>
+              <p  className="lead">
                 <a href="https://github.com/Antonomy" target="_blank"><img alt="Github" src="https://img.shields.io/badge/GitHub-41454A.svg?&style=for-the-badge&logo=Github&logoColor=white" /></a>
                 <a href="https://www.linkedin.com/in/antonyyu/" target="_blank"><img alt="LinkedIn" src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" /></a>
                 <a href="mailto:hello@antonyyu.com" target="_blank"><img alt="Email Me" src="https://img.shields.io/badge/Email%20me-EA4335.svg?&style=for-the-badge&logo=gmail&logoColor=white" /></a>
