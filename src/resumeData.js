@@ -1,7 +1,7 @@
 const resumeData = {
   name: 'Antony',
   linkedinLink: 'https://www.linkedin.com/in/antonyyu/',
-  landingIntro: "I'm a Full Stack Software Engineer & Program Operations Leader. I'm always looking for opportunities to collaborate on new projects- so feel free to reach out!",
+  landingIntro: "I'm a Full Stack Software Engineer & Program and Product Operations Leader. I'm always looking for opportunities to collaborate on new projects- so feel free to reach out!",
   socialLinks: [
     {
       name: 'email',
