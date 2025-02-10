@@ -24,7 +24,16 @@ const resumeData = {
   githubLink: 'https://github.com/Antonomy',
   work: [
     {
-      CompanyName: 'Huckleberry',
+      CompanyName: 'Paychex',
+      Title: 'Software Engineer',
+      StartMonth: 'May',
+      StartYear: '2023',
+      EndMonth: 'Present',
+      EndYear: '',
+      Achievements: ''
+    },
+    {
+      CompanyName: 'Huckleberry (acquired by Paychex)',
       Title: 'VP Operations',
       StartMonth: 'Jan',
       StartYear: '2020',
