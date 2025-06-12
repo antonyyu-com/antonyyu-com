@@ -18,6 +18,7 @@ export default class Resume extends Component {
                         <h3>{item.CompanyName}</h3>
                         <p className='info'>
                           {item.Title}
+                          {item.Subtitle && <span> – <em>{item.Subtitle}</em></span>}
                           <span>&bull;</span> <em className='date'>{item.StartMonth} {item.StartYear} - {item.EndMonth} {item.EndYear}</em>
                         </p>
                         <p>

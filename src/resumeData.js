@@ -25,6 +25,7 @@ const resumeData = {
   work: [
     {
       CompanyName: 'Paychex',
+      Subtitle: 'Acquired by Paychex',
       Title: 'Software Engineer',
       StartMonth: 'May',
       StartYear: '2023',
