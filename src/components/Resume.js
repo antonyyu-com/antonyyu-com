@@ -47,7 +47,7 @@ export default class Resume extends Component {
                         <h3>{item.InstitutionName}</h3>
                         <p className='info'>
                           {item.Degree}
-                          <span>&bull;</span> <em className='date'>{item.GraduationMonth} {item.GraduationYear}</em>
+                          {/* <span>&bull;</span> <em className='date'>{item.GraduationMonth} {item.GraduationYear}</em> */}
                         </p>
                         <p>
                           {item.Achievements}
