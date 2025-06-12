@@ -15,10 +15,9 @@ export default class Resume extends Component {
                   return (
                     <div className='row item'>
                       <div className='twelve columns'>
-                        <h3>{item.CompanyName}</h3>
+                        <h3>{item.CompanyName}{item.Subtitle && <span className='info'> – <em>{item.Subtitle}</em></span>}</h3>
                         <p className='info'>
                           {item.Title}
-                          {item.Subtitle && <span> – <em>{item.Subtitle}</em></span>}
                           <span>&bull;</span> <em className='date'>{item.StartMonth} {item.StartYear} - {item.EndMonth} {item.EndYear}</em>
                         </p>
                         <p>

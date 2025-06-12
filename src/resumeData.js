@@ -25,7 +25,6 @@ const resumeData = {
   work: [
     {
       CompanyName: 'Paychex',
-      Subtitle: 'Acquired by Paychex',
       Title: 'Software Engineer',
       StartMonth: 'May',
       StartYear: '2023',
@@ -34,7 +33,8 @@ const resumeData = {
       Achievements: ''
     },
     {
-      CompanyName: 'Huckleberry (acquired by Paychex)',
+      CompanyName: 'Huckleberry',
+      Subtitle: 'Acquired by Paychex',
       Title: 'VP Operations',
       StartMonth: 'Jan',
       StartYear: '2020',
