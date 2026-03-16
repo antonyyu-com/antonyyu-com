@@ -1,43 +1,39 @@
-import React, { Component } from 'react'
-export default class About extends Component {
-  render () {
-    const resumeData = this.props.resumeData
-    return (
-      <section id='about'>
-        <div className='row'>
+import React from 'react'
 
-          <div className='three columns'>
+function About ({ resumeData }) {
+  const { aboutMe, name, email } = resumeData
 
-            <img className='profile-pic' src='images/profilepic.png' alt='Antony Yu' />
+  return (
+    <section id='about'>
+      <div className='row'>
+        <div className='three columns'>
+          <img
+            className='profile-pic'
+            src='images/profilepic.jpg'
+            alt='Antony Yu'
+            loading='lazy'
+            decoding='async'
+          />
+        </div>
 
-          </div>
+        <div className='nine columns main-col'>
+          <h2>Me</h2>
+          <p>{aboutMe}</p>
 
-          <div className='nine columns main-col'>
-
-            <h2>Me</h2>
-            <p>
-              {
-                 resumeData.aboutme
-               }
-            </p>
-
-            <div className='row'>
-
-              <div className='columns contact-details'>
-
-                <h2>Contact</h2>
-                <p className='address'>
-                  <span>{resumeData.name}</span>
-                  <br />
-                  <span>
-                    {resumeData.email}
-                  </span>
-                </p>
-              </div>
+          <div className='row'>
+            <div className='columns contact-details'>
+              <h2>Contact</h2>
+              <p className='address'>
+                <span>{name}</span>
+                <br />
+                <span>{email}</span>
+              </p>
             </div>
           </div>
         </div>
-      </section>
-    )
-  }
+      </div>
+    </section>
+  )
 }
+
+export default About

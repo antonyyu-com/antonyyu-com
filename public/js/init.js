@@ -10,7 +10,9 @@ jQuery(document).ready(function ($) {
 ------------------------------------------------------ */
 
   setTimeout(function () {
-	   $('h1.responsive-headline').fitText(1, { minFontSize: '40px', maxFontSize: '90px' })
+     if ($.fn.fitText && $('h1.responsive-headline').length) {
+       $('h1.responsive-headline').fitText(1, { minFontSize: '40px', maxFontSize: '90px' })
+     }
 	 }, 100)
 
   /* ---------------------------------------------------- */
@@ -37,22 +39,24 @@ jQuery(document).ready(function ($) {
   const sections = $('section')
   const navigation_links = $('#nav-wrap a')
 
-  sections.waypoint({
+  if ($.fn.waypoint && sections.length) {
+    sections.waypoint({
 
-    handler: function (event, direction) {
-		   let active_section
+      handler: function (event, direction) {
+		     let active_section
 
-      active_section = $(this)
-      if (direction === 'up') active_section = active_section.prev()
+        active_section = $(this)
+        if (direction === 'up') active_section = active_section.prev()
 
-      const active_link = $('#nav-wrap a[href="#' + active_section.attr('id') + '"]')
+        const active_link = $('#nav-wrap a[href="#' + active_section.attr('id') + '"]')
 
-      navigation_links.parent().removeClass('current')
-      active_link.parent().addClass('current')
-    },
-    offset: '35%'
+        navigation_links.parent().removeClass('current')
+        active_link.parent().addClass('current')
+      },
+      offset: '35%'
 
-  })
+    })
+  }
 
   /* ---------------------------------------------------- */
   /*	Make sure that #header-background-image height is
@@ -89,15 +93,17 @@ jQuery(document).ready(function ($) {
   /*	Modal Popup
 ------------------------------------------------------ */
 
-  $('.item-wrap a').magnificPopup({
+  if ($.fn.magnificPopup && $('.item-wrap a').length) {
+    $('.item-wrap a').magnificPopup({
 
-    type: 'inline',
-    fixedContentPos: false,
-    removalDelay: 200,
-    showCloseBtn: false,
-    mainClass: 'mfp-fade'
+      type: 'inline',
+      fixedContentPos: false,
+      removalDelay: 200,
+      showCloseBtn: false,
+      mainClass: 'mfp-fade'
 
-  })
+    })
+  }
 
   $(document).on('click', '.popup-modal-dismiss', function (e) {
     		e.preventDefault()
@@ -107,55 +113,59 @@ jQuery(document).ready(function ($) {
   /* ---------------------------------------------------- */
   /*	Flexslider
 /*---------------------------------------------------- */
-  $('.flexslider').flexslider({
-    namespace: 'flex-',
-    controlsContainer: '.flex-container',
-    animation: 'slide',
-    controlNav: true,
-    directionNav: false,
-    smoothHeight: true,
-    slideshowSpeed: 7000,
-    animationSpeed: 600,
-    randomize: false
-  })
+  if ($.fn.flexslider && $('.flexslider').length) {
+    $('.flexslider').flexslider({
+      namespace: 'flex-',
+      controlsContainer: '.flex-container',
+      animation: 'slide',
+      controlNav: true,
+      directionNav: false,
+      smoothHeight: true,
+      slideshowSpeed: 7000,
+      animationSpeed: 600,
+      randomize: false
+    })
+  }
 
   /* ---------------------------------------------------- */
   /*	contact form
 ------------------------------------------------------ */
 
-  $('form#contactForm button.submit').click(function () {
-    $('#image-loader').fadeIn()
+  if ($('form#contactForm').length) {
+    $('form#contactForm button.submit').click(function () {
+      $('#image-loader').fadeIn()
 
-    const contactName = $('#contactForm #contactName').val()
-    const contactEmail = $('#contactForm #contactEmail').val()
-    const contactSubject = $('#contactForm #contactSubject').val()
-    const contactMessage = $('#contactForm #contactMessage').val()
+      const contactName = $('#contactForm #contactName').val()
+      const contactEmail = $('#contactForm #contactEmail').val()
+      const contactSubject = $('#contactForm #contactSubject').val()
+      const contactMessage = $('#contactForm #contactMessage').val()
 
-    const data = 'contactName=' + contactName + '&contactEmail=' + contactEmail +
-               '&contactSubject=' + contactSubject + '&contactMessage=' + contactMessage
+      const data = 'contactName=' + contactName + '&contactEmail=' + contactEmail +
+                 '&contactSubject=' + contactSubject + '&contactMessage=' + contactMessage
 
-    $.ajax({
+      $.ajax({
 
-	      type: 'POST',
-	      url: 'inc/sendEmail.php',
-	      data,
-	      success: function (msg) {
-        // Message was sent
-        if (msg == 'OK') {
-          $('#image-loader').fadeOut()
-          $('#message-warning').hide()
-          $('#contactForm').fadeOut()
-          $('#message-success').fadeIn()
-        }
-        // There was an error
-        else {
-          $('#image-loader').fadeOut()
-          $('#message-warning').html(msg)
-	            $('#message-warning').fadeIn()
-        }
-	      }
+	        type: 'POST',
+	        url: 'inc/sendEmail.php',
+	        data,
+	        success: function (msg) {
+          // Message was sent
+          if (msg == 'OK') {
+            $('#image-loader').fadeOut()
+            $('#message-warning').hide()
+            $('#contactForm').fadeOut()
+            $('#message-success').fadeIn()
+          }
+          // There was an error
+          else {
+            $('#image-loader').fadeOut()
+            $('#message-warning').html(msg)
+	              $('#message-warning').fadeIn()
+          }
+	        }
 
+      })
+      return false
     })
-    return false
-  })
+  }
 })

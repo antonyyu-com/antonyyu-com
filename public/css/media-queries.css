@@ -97,6 +97,11 @@
 
 @media only screen and (max-width: 767px) {
 
+   header {
+      background-image: url(../images/header-background-mobile.jpg);
+      background-position: center top;
+   }
+
    /* mobile navigation
    -------------------------------------------------------------------- */
    #nav-wrap {
