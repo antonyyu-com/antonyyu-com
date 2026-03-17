@@ -9,70 +9,55 @@ function Resume ({ resumeData }) {
   } = resumeData
 
   return (
-    <section id='resume'>
-      <div className='row work'>
-        <div className='three columns header-col'>
-          <h1><span>Work</span></h1>
+    <section id='resume' className='section section-resume'>
+      <div className='shell'>
+        <div className='section-heading'>
+          <p className='section-label'>Resume</p>
+          <h2>Experience, education, and technical toolkit.</h2>
         </div>
 
-        <div className='nine columns main-col'>
-          {work.map((item) => (
-            <div className='row item' key={`${item.companyName}-${item.title}-${item.startYear}`}>
-              <div className='twelve columns'>
-                <h3>
-                  {item.companyName}
-                  {item.subtitle && <span className='info'> - <em>{item.subtitle}</em></span>}
-                </h3>
-                <p className='info'>
-                  {item.title}
-                  <span>&bull;</span>{' '}
-                  <em className='date'>
-                    {item.startMonth} {item.startYear} - {item.endMonth} {item.endYear}
-                  </em>
-                </p>
-                <p>{item.achievements}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className='row education'>
-        <div className='three columns header-col'>
-          <h1><span>Education</span></h1>
-        </div>
-
-        <div className='nine columns main-col'>
-          {education.map((item) => (
-            <div className='row item' key={`${item.institutionName}-${item.degree}-${item.graduationYear}`}>
-              <div className='twelve columns'>
-                <h3>{item.institutionName}</h3>
-                <p className='info'>{item.degree}</p>
-                <p>{item.achievements}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className='row skill'>
-        <div className='three columns header-col'>
-          <h1><span>Skills</span></h1>
-        </div>
-
-        <div className='nine columns main-col'>
-          <p>{skillsDescription}</p>
-
-          <div className='bars'>
-            <ul className='skills'>
-              {skills.map((item) => (
-                <li key={item.skillName}>
-                  <span className={`bar-expand ${item.skillName.toLowerCase()}`} />
-                  <em>{item.skillName}</em>
-                </li>
+        <div className='resume-layout'>
+          <article className='resume-block'>
+            <h3>Work</h3>
+            <div className='resume-list'>
+              {work.map((item) => (
+                <section className='resume-item' key={`${item.companyName}-${item.title}-${item.startYear}`}>
+                  <p className='item-date'>
+                    {item.startMonth} {item.startYear} - {item.endMonth} {item.endYear || ''}
+                  </p>
+                  <h4>{item.title}</h4>
+                  <p className='item-company'>{item.companyName}</p>
+                  {item.subtitle ? <p className='item-subtitle'>{item.subtitle}</p> : null}
+                  {item.achievements ? <p>{item.achievements}</p> : null}
+                </section>
               ))}
-            </ul>
-          </div>
+            </div>
+          </article>
+
+          <article className='resume-block'>
+            <h3>Education</h3>
+            <div className='resume-list'>
+              {education.map((item) => (
+                <section className='resume-item' key={`${item.institutionName}-${item.degree}-${item.graduationYear}`}>
+                  <p className='item-date'>
+                    {item.graduationMonth} {item.graduationYear}
+                  </p>
+                  <h4>{item.institutionName}</h4>
+                  <p className='item-company'>{item.degree}</p>
+                  {item.achievements ? <p>{item.achievements}</p> : null}
+                </section>
+              ))}
+            </div>
+          </article>
+        </div>
+
+        <div className='skills-wrap'>
+          <p className='section-label'>{skillsDescription}</p>
+          <ul className='skill-tags'>
+            {skills.map((item) => (
+              <li key={item.skillName}>{item.skillName}</li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

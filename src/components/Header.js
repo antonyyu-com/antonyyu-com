@@ -1,43 +1,43 @@
 import React from 'react'
 
 function Header ({ resumeData }) {
-  const { name, landingIntro, socialLinks = [] } = resumeData
+  const { name, landingIntro, socialLinks = [], email } = resumeData
 
   return (
-    <header id='home'>
-      <nav id='nav-wrap'>
-        <a className='mobile-btn' href='#nav-wrap' title='Show navigation'>Show navigation</a>
-        <a className='mobile-btn' href='#home' title='Hide navigation'>Hide navigation</a>
-        <ul id='nav' className='nav'>
-          <li className='current'><a className='smoothscroll' href='#home'>Home</a></li>
-          <li><a className='smoothscroll' href='#about'>About</a></li>
-          <li><a className='smoothscroll' href='#resume'>Resume</a></li>
-          <li><a className='smoothscroll' href='#contact'>Contact</a></li>
-        </ul>
-      </nav>
+    <header id='home' className='hero'>
+      <div className='shell'>
+        <nav className='top-nav' aria-label='Primary navigation'>
+          <a className='brand' href='#home'>{name}</a>
+          <ul className='top-nav-links'>
+            <li><a href='#about'>About</a></li>
+            <li><a href='#resume'>Resume</a></li>
+            <li><a href='#contact'>Contact</a></li>
+          </ul>
+        </nav>
 
-      <div className='row banner'>
-        <div className='banner-text'>
-          <h1 className='responsive-headline'>Hello! I&apos;m {name}.</h1>
-          <h3 style={{ color: '#fff', fontFamily: 'sans-serif' }}>
+        <div className='hero-content'>
+          <p className='hero-kicker'>Software Engineer · Product & Program Operations</p>
+          <h1>Hello, I&apos;m {name}</h1>
+          <p className='hero-intro'>
             {landingIntro}
-          </h3>
-          <hr />
-          <ul className='social'>
+          </p>
+
+          <div className='hero-actions'>
+            <a className='btn btn-primary' href={`mailto:${email}`}>Reach Out</a>
+            <a className='btn btn-secondary' href='#resume'>View Experience</a>
+          </div>
+
+          <ul className='social-pills' aria-label='External links'>
             {socialLinks.map((item) => (
               <li key={item.name}>
                 <a href={item.url} target='_blank' rel='noreferrer'>
-                  <i className={item.className} />
+                  {item.name}
                 </a>
               </li>
             ))}
           </ul>
         </div>
       </div>
-
-      <p className='scrolldown'>
-        <a className='smoothscroll' href='#about'><i className='icon-down-circle' /></a>
-      </p>
     </header>
   )
 }
